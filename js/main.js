@@ -1,6 +1,19 @@
 window.addEventListener('load', function() {
   const alert = document.querySelector('#alert');
+  const hamburger = document.querySelector('#hamburger');
+  
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('selected');
+      const mobileNav = document.querySelector('.nav').cloneNode(true);
+      const mobileMenu = document.createElement('div');
+      mobileMenu.classList.add('hamburgerMenu');
+      mobileMenu.appendChild(mobileNav);
+      document.body.appendChild(mobileMenu);
+  });
+}
 
+  // Slider range value
   const humidtyRange = document.querySelector('#humidity-range');
   const humidtyValue = document.querySelector('#humidity');
   const waterRange = document.querySelector('#water-range');

@@ -33,7 +33,8 @@
   // UPDATE data SET device_id = '1001' WHERE device_id = '0001'
   include './dbconnect.php';
   $username = $_SESSION['username'];
-  $sql = "SELECT * FROM data WHERE username = '$username' LIMIT 24";
+  $device_id = $_SESSION['device_id'];
+  $sql = "SELECT * FROM data WHERE username = '$username' ORDER BY date DESC LIMIT 24";
   $result = mysqli_query($conn, $sql);
   $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
   ?>
